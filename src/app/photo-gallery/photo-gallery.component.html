@@ -1,0 +1,12 @@
+<select [(ngModel)]="selectedAuthor">
+    <option value="">All Authors</option>
+    <option *ngFor="let author of authors" [value]="author">{{ author }}</option>
+  </select>
+  <div id="gallery">
+    <div *ngFor="let photo of filteredPhotos()" class="photo-card">
+      <img [src]="photo.download_url" [alt]="photo.author" />
+      <div class="author">{{ photo.author }}</div>
+      <div class="body-text">Static body text</div>
+    </div>
+  </div>
+  
